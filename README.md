@@ -1,5 +1,3 @@
-
-
 # Merge Two Sorted Lists
 
 This repository contains the implementation of a solution to merge two sorted linked lists into one sorted linked list. The solution is implemented in Java using the following `ListNode` class:
@@ -38,7 +36,15 @@ public ListNode mergeTwoLists(ListNode list1, ListNode list2)
 Here is the implementation of the solution:
 
 ```java
-class Solution {
+public class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
+public class p2 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode dummy = new ListNode(0);
         ListNode current = dummy;
@@ -61,6 +67,21 @@ class Solution {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+        p2 solution = new p2();
+        ListNode mergedList = solution.mergeTwoLists(list1, list2);
+
+        // Print the merged list
+        while (mergedList != null) {
+            System.out.print(mergedList.val + " ");
+            mergedList = mergedList.next;
+        }
     }
 }
 ```
@@ -92,8 +113,8 @@ Below is a visual representation of the process:
 1. Clone the repository.
 2. Compile and run the Java program with your test cases.
     ```sh
-    javac Solution.java
-    java Solution
+    javac p2.java
+    java p2
     ```
 
 ## License
